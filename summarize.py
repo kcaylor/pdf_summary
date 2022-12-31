@@ -19,16 +19,6 @@ engine = "text-davinci-003"
 tldr_tag = "\n tl;dr:"
 #%%
 
-def get_paper(paper_url, filename="random_paper.pdf"):
-    """
-    Downloads a paper from it's arxiv page and returns
-    the local path to that file.
-    """
-    downloaded_paper = wget.download(paper_url, filename)    
-    downloaded_paper_filepath = pathlib.Path(downloaded_paper)
-
-    return downloaded_paper_filepath
-
 def get_paper_content(filename=None,use_pypdf=True):
     if filename and not use_pypdf:
         return pdfplumber.open(filename).pages
