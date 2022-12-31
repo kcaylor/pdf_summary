@@ -78,6 +78,13 @@ def summarize_page(page,
 # %%
 
 if __name__ == "__main__":
+    """
+    Checks if the code is the main module and reassigns the command line arguments to variables.
+    Gets the paper content from the specified filename.
+    Creates a progress bar to track the progress of the summaries.
+    Loops over the paper content and sumsarizes each page, saving the result in a dictionary.
+    Prints each summary in the dictionary. 
+    """
     args = sys.argv[1:]
     filename = args[0]
     paper_content = get_paper_content(filename=filename)
